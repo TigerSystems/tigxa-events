@@ -39,6 +39,7 @@ repositories {
 dependencies {
 
     compileOnly 'de.MarkusTieger:tigxa-api:1.2+'
+    compileOnly 'org.openjfx:javafx-graphics:17:linux'
 
     compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.22'
