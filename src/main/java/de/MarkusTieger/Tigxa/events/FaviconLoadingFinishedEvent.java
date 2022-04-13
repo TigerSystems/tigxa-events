@@ -2,6 +2,7 @@ package de.MarkusTieger.Tigxa.events;
 
 import de.MarkusTieger.Tigxa.api.event.IEvent;
 import de.MarkusTieger.Tigxa.api.permission.Permission;
+import de.MarkusTieger.Tigxa.api.web.IWebEngine;
 import lombok.Getter;
 
 import java.net.URI;
@@ -15,8 +16,10 @@ public class FaviconLoadingFinishedEvent implements IEvent {
     private final String location;
     private final URI locationAsURI;
     private final boolean success;
+    private final IWebEngine engine;
 
-    public FaviconLoadingFinishedEvent(String loc, URI locAsURI, boolean success){
+    public FaviconLoadingFinishedEvent(IWebEngine engine, String loc, URI locAsURI, boolean success){
+        this.engine = engine;
         this.location = loc;
         this.locationAsURI = locAsURI;
         this.success = success;

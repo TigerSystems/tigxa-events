@@ -2,6 +2,7 @@ package de.MarkusTieger.Tigxa.events;
 
 import de.MarkusTieger.Tigxa.api.event.IEvent;
 import de.MarkusTieger.Tigxa.api.permission.Permission;
+import de.MarkusTieger.Tigxa.api.web.IWebEngine;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,8 +15,10 @@ public class AlertHandleEvent implements IEvent {
 
     private final boolean canceled;
     private final String data;
+    private final IWebEngine engine;
 
-    public AlertHandleEvent(String data, boolean canceled){
+    public AlertHandleEvent(IWebEngine engine, String data, boolean canceled){
+        this.engine = engine;
         this.data = data;
         this.canceled = canceled;
     }

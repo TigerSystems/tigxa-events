@@ -2,6 +2,7 @@ package de.MarkusTieger.Tigxa.events;
 
 import de.MarkusTieger.Tigxa.api.event.IEvent;
 import de.MarkusTieger.Tigxa.api.permission.Permission;
+import de.MarkusTieger.Tigxa.api.web.IWebEngine;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,9 +16,12 @@ public class WebLoadStartEvent implements IEvent {
     private String location;
     private boolean canceled;
 
-    public WebLoadStartEvent(String location, boolean canceled){
+    private final IWebEngine engine;
+
+    public WebLoadStartEvent(IWebEngine engine, String location, boolean canceled){
         this.location = location;
         this.canceled = canceled;
+        this.engine = engine;
     }
 
     @Override

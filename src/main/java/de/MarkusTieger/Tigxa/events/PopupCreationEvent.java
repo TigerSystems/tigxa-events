@@ -2,6 +2,7 @@ package de.MarkusTieger.Tigxa.events;
 
 import de.MarkusTieger.Tigxa.api.event.IEvent;
 import de.MarkusTieger.Tigxa.api.permission.Permission;
+import de.MarkusTieger.Tigxa.api.web.IWebEngine;
 import de.MarkusTieger.Tigxa.api.window.ITab;
 import de.MarkusTieger.Tigxa.api.window.IWindow;
 import lombok.Getter;
@@ -14,11 +15,14 @@ public class PopupCreationEvent implements IEvent {
 
     private final IWindow window;
     private final ITab tab;
+    private final IWebEngine engine;
+    private final IWebEngine newEngine;
 
-    public PopupCreationEvent(IWindow window, ITab tab){
+    public PopupCreationEvent(IWebEngine engine, IWebEngine newEngine, IWindow window, ITab tab){
         this.window = window;
         this.tab = tab;
-        // TODO: Event-Permission-System
+        this.engine = engine;
+        this.newEngine = newEngine;
     }
 
     @Override
